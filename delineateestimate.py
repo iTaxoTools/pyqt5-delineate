@@ -402,11 +402,12 @@ version= False):
     xy= {x:y for x, y in zip(range(1, len(xx)+1), list(xx.values()))}
 
     out_path1, outf1 = open_output_file(constraints_file, output_file,
-            suffix=".delimitation-results",
+            suffix=".delimitation-results_delineate",
             extension="spart")
     directory, file= os.path.split(tree_file)
 
     import datetime, time, re
+    file= re.sub(r'[^A-Za-z0-9_]', '_', file)
     outf1.write("begin spart;\n\n")
     outf1.write(f"Project_name = {file};\n")
     outf1.write(f'Date = {datetime.datetime.now().astimezone().isoformat()};\n')
@@ -428,7 +429,7 @@ version= False):
             xm= yy + ":" + repr(c)
             ll.append(xm)
 
-    outf1.writelines([x+"\n" for x in ll[0:-2]])
+    outf1.writelines([x+"\n" for x in ll[0:-1]])
     outf1.write(f"{ll[-1]};\n\n")
     outf1.write(f"Spartition_score_type = Constrained probability;\n")
     outf1.write("[this SPART file includes only the most probable partition\nfrom DELINEATE analysis, i.e.,\
