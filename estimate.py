@@ -46,7 +46,7 @@ class MyAbstract(QThread):
 
     def run(self):
         self.loop.run_until_complete(self.func())
-        self.loop.close()
+        
 
 
 
