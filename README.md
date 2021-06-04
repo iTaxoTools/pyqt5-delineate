@@ -25,7 +25,7 @@ Please use "lionepha-p095-hkyg.mcct-mean-age.tree.nex" as sample species tree fi
 * To use it as GUI tool.
 
 ```
- python3 estimate.py
+ python3 delineate_run.py
  ```
 
   Please type on your terminal and follow the instructions. Please use "lionepha-p095-hkyg.mcct-mean-age.tree.nex" as sample species tree file and "lionepha.run1.tsv" as constraint file.  
